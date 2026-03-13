@@ -70,10 +70,15 @@ Current AI systems (LLMs) operate in **weak lumpability** — coherent within tr
 This project demonstrates the integration of custom MCP servers for formal reasoning:
 
 - **hipai-montague**: Graph-based world model for ontology construction and semantic queries
+https://github.com/angrysky56/HiPAI-Montague-Semantic-Cognition
 - **mcp-logic**: Prover9/Mace4 interface for first-order logic proofs and counterexample search
+https://github.com/angrysky56/MCP-Logic
 - **advanced-reasoning**: Meta-cognitive reasoning chains with hypothesis tracking, confidence scoring, and persistent memory
+https://github.com/angrysky56/Advanced-Reasoning
 - **verifier-graph**: Reasoning provenance tracking
+https://github.com/angrysky56/vgcp-mcp-server
 - **cognitive-diagram-nav**: Formal diagram navigation and rewriting
+https://github.com/angrysky56/cognitive-diagram-nav-mcp
 
 ## Project Structure
 
