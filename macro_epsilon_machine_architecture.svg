@@ -1,0 +1,101 @@
+<svg width="100%" viewBox="0 0 680 620" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<style>
+  text { font-family: sans-serif; fill: #2C2C2A; }
+  .th { font-size: 14px; font-weight: 500; }
+  .ts { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+  .layer-l { font-size: 11px; font-weight: 400; fill: #888780; }
+
+  /* Layer fills and strokes */
+  .l-gray rect   { fill: #F1EFE8; stroke: #5F5E5A; }
+  .l-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+  .l-teal rect   { fill: #E1F5EE; stroke: #0F6E56; }
+  .l-amber rect  { fill: #FAEEDA; stroke: #854F0B; }
+  .l-coral rect  { fill: #FAECE7; stroke: #993C1D; }
+
+  .l-gray .th   { fill: #444441; }
+  .l-gray .ts   { fill: #5F5E5A; }
+  .l-purple .th { fill: #3C3489; }
+  .l-purple .ts { fill: #534AB7; }
+  .l-teal .th   { fill: #085041; }
+  .l-teal .ts   { fill: #0F6E56; }
+  .l-amber .th  { fill: #633806; }
+  .l-amber .ts  { fill: #854F0B; }
+  .l-coral .th  { fill: #712B13; }
+  .l-coral .ts  { fill: #993C1D; }
+
+  .arr { stroke: #888780; stroke-width: 1.5; fill: none; }
+  .feedback { stroke: #B4B2A9; stroke-width: 1; fill: none; stroke-dasharray: 4 3; }
+  .legend { font-size: 11px; fill: #888780; }
+</style>
+</defs>
+
+<!-- Layer sidebar labels -->
+<text class="layer-l" x="30" y="115" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,30,115)">L1 substrate</text>
+<text class="layer-l" x="30" y="215" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,30,215)">L2 ε-machine</text>
+<text class="layer-l" x="30" y="335" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,30,335)">L3 kernel</text>
+<text class="layer-l" x="30" y="445" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,30,445)">L4 buffer</text>
+<text class="layer-l" x="30" y="545" text-anchor="middle" dominant-baseline="central" transform="rotate(-90,30,545)">L5 monitor</text>
+
+<!-- L1: Stochastic substrate -->
+<g class="l-gray">
+  <rect x="55" y="80" width="580" height="60" rx="8" stroke-width="0.5"/>
+  <text class="th" x="345" y="104" text-anchor="middle" dominant-baseline="central">Stochastic substrate  (micro X)</text>
+  <text class="ts" x="345" y="124" text-anchor="middle" dominant-baseline="central">LLM / transformer — raw weak-lumpability material</text>
+</g>
+
+<!-- Arrow L1 -> L2 -->
+<line x1="345" y1="140" x2="345" y2="162" class="arr" marker-end="url(#arrow)"/>
+
+<!-- L2: Causal state construction -->
+<g class="l-purple">
+  <rect x="55" y="164" width="580" height="68" rx="8" stroke-width="0.5"/>
+  <text class="th" x="345" y="188" text-anchor="middle" dominant-baseline="central">Causal state construction  — Graph-PReFLexOR</text>
+  <text class="ts" x="345" y="210" text-anchor="middle" dominant-baseline="central">Discovers strongly lumpable macro-states Z by holding semantic entropy &gt; structural entropy</text>
+  <text class="ts" x="345" y="226" text-anchor="middle" dominant-baseline="central">"Critical state" = informational closure condition  ·  self-reinforcing loop = unifilarity</text>
+</g>
+
+<!-- Arrow L2 -> L3 -->
+<line x1="345" y1="232" x2="345" y2="254" class="arr" marker-end="url(#arrow)"/>
+
+<!-- L3: Reciprocal coherence kernel -->
+<g class="l-teal">
+  <rect x="55" y="256" width="580" height="68" rx="8" stroke-width="0.5"/>
+  <text class="th" x="345" y="280" text-anchor="middle" dominant-baseline="central">Reciprocal coherence kernel  — Sheaf Laplacian</text>
+  <text class="ts" x="345" y="300" text-anchor="middle" dominant-baseline="central">Enforces bidirectional consistency across agents via restriction maps  ·  Λ(K_T) &lt; τ_{T,m}</text>
+  <text class="ts" x="345" y="316" text-anchor="middle" dominant-baseline="central">ADMM dual variable = memory of past inconsistencies = buffering capacity T</text>
+</g>
+
+<!-- Arrow L3 -> L4 -->
+<line x1="345" y1="324" x2="345" y2="346" class="arr" marker-end="url(#arrow)"/>
+
+<!-- L4: Goal hierarchy + buffering -->
+<g class="l-amber">
+  <rect x="55" y="348" width="580" height="68" rx="8" stroke-width="0.5"/>
+  <text class="th" x="345" y="372" text-anchor="middle" dominant-baseline="central">Goal hierarchy + predictive buffering  — LIDA / Long CoT</text>
+  <text class="ts" x="345" y="392" text-anchor="middle" dominant-baseline="central">Distal intentions = long-horizon causal closure maintenance  ·  attention codelets = active T</text>
+  <text class="ts" x="345" y="408" text-anchor="middle" dominant-baseline="central">Deep CoT "covalent bonds" absorb micro-noise; keep macro logic shielded</text>
+</g>
+
+<!-- Arrow L4 -> L5 -->
+<line x1="345" y1="416" x2="345" y2="438" class="arr" marker-end="url(#arrow)"/>
+
+<!-- L5: Meta-cognitive monitor -->
+<g class="l-coral">
+  <rect x="55" y="440" width="580" height="68" rx="8" stroke-width="0.5"/>
+  <text class="th" x="345" y="464" text-anchor="middle" dominant-baseline="central">Closure monitor  — advanced-reasoning / mcp-logic</text>
+  <text class="ts" x="345" y="484" text-anchor="middle" dominant-baseline="central">Detects: lumpability shift · Q&gt;T approach · Λ → τ_{T,m} latency spike</text>
+  <text class="ts" x="345" y="500" text-anchor="middle" dominant-baseline="central">Triggers: Kernel Retreat · Graph re-partition · ADMM reset · post-fragmentation Fusion</text>
+</g>
+
+<!-- Feedback arrow (recovery path) -->
+<path d="M637 508 L637 95" class="feedback" marker-end="url(#arrow)"/>
+<text class="legend" x="648" y="305" text-anchor="start">recovery</text>
+<text class="legend" x="648" y="319" text-anchor="start">feedback</text>
+
+<!-- Bottom legend -->
+<text class="legend" x="345" y="590" text-anchor="middle" dominant-baseline="central">Kernel 1 = Layers 2–4 in alignment  ·  Coherence timeout = Λ exceeds τ_{T,m}  ·  Kernel 2 = collapse to L1</text>
+</svg>
