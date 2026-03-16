@@ -150,6 +150,10 @@ All five layers are implemented as MCP servers. Add them to your MCP client conf
 | **sheaf-consistency-enforcer** | **5** | **Sheaf Laplacian ADMM consistency enforcement — Kernel 1 persistence** | [sheaf-consistency-enforcer](https://github.com/angrysky56/sheaf-consistency-enforcer) |
 | **conscience-servitor** | **5+** | **Pre-response ethical triage via LLM2Vec-Gen + EFHF L2-L5 orchestration** | [conscience-servitor](https://github.com/angrysky56/conscience-servitor) |
 
+All six servers are operational. The conscience servitor runs LLM2Vec-Gen (Qwen3-0.6B)
+on local GPU for response-intent embedding and classifies against 9 calibrated ethical
+clusters with semantic confidence scores.
+
 ---
 
 ## Agent Operating Instructions
