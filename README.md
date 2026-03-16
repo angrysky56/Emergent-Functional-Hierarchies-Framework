@@ -32,30 +32,45 @@ enforcer monitors whether all layers remain in strong lumpability (Kernel 1) at 
 | 3 | Structural verification — does macro commute with micro? | Lumpability check | mcp-logic (Prover9/Mace4) |
 | 4 | Meta-cognitive monitoring — coherence window tracking | Coherence window τ_{T,m} | advanced-reasoning |
 | 5 | **Sheaf consistency enforcement — Kernel 1 persistence** | **Reciprocal Coherence Kernel** | **sheaf-consistency-enforcer** |
+| 5+ | **Pre-response ethical triage + L2-L5 orchestration** | **Tripartite oversight** | **conscience-servitor** |
 
 Layer 5 is the closure of the loop. Without it, the system requires human orchestration
 to detect when Layers 2–4 drift out of mutual consistency — the "missing piece" documented
 in `docs/session-findings/2026-03-13-ai-application.md`. The enforcer makes that detection
 automatic using Sheaf Laplacian ADMM coordination across all agent pairs.
 
+Layer 5+ (the conscience servitor) adds autonomous pre-response triage using
+[LLM2Vec-Gen](https://arxiv.org/abs/2603.10913) to predict response-intent semantics
+and classify them against ethical clusters *before the LLM generates output*. It
+orchestrates L2-L5 when triage flags high-risk content, implementing the tripartite
+oversight model: the servitor watches the LLM, the LLM watches the servitor, and the
+human watches both.
+
 ### How the Layers Coordinate
 
 ```
-LLM formulates hypothesis
+User prompt arrives
     ↓
-hipai-montague encodes it in the world model graph
+conscience-servitor triages via LLM2Vec-Gen (~10ms)
     ↓
-mcp-logic verifies structural consistency (Prover9)
+Low risk?   → LLM generates response normally
+High risk?  → Full L2-L5 pipeline triggered:
     ↓
-advanced-reasoning tracks confidence and reasoning depth
-    ↓
-sheaf-consistency-enforcer registers all agent states,
-runs ADMM cycle, checks coboundary norms across edges
-    ↓
-KERNEL1?  → commit claim to world model, iterate
-WEAK?     → increase verification, hold commits
-WARNING?  → halt commits, re-verify recent claims
-TIMEOUT?  → execute recovery, do not commit
+    LLM formulates hypothesis
+        ↓
+    hipai-montague encodes it in the world model graph
+        ↓
+    mcp-logic verifies structural consistency (Prover9)
+        ↓
+    advanced-reasoning tracks confidence and reasoning depth
+        ↓
+    sheaf-consistency-enforcer registers all agent states,
+    runs ADMM cycle, checks coboundary norms across edges
+        ↓
+    KERNEL1?  → commit claim to world model, iterate
+    WEAK?     → increase verification, hold commits
+    WARNING?  → halt commits, re-verify recent claims
+    TIMEOUT?  → execute recovery, do not commit
 ```
 
 The enforcer measures **coboundary norms** — the distance between what any two agents
@@ -133,6 +148,7 @@ All five layers are implemented as MCP servers. Add them to your MCP client conf
 | verifier-graph | 4 | Reasoning provenance tracking, audit trail | [vgcp-mcp-server](https://github.com/angrysky56/vgcp-mcp-server) |
 | cognitive-diagram-nav | 4 | Formal diagram navigation and rewriting | [cognitive-diagram-nav-mcp](https://github.com/angrysky56/cognitive-diagram-nav-mcp) |
 | **sheaf-consistency-enforcer** | **5** | **Sheaf Laplacian ADMM consistency enforcement — Kernel 1 persistence** | [sheaf-consistency-enforcer](https://github.com/angrysky56/sheaf-consistency-enforcer) |
+| **conscience-servitor** | **5+** | **Pre-response ethical triage via LLM2Vec-Gen + EFHF L2-L5 orchestration** | [conscience-servitor](https://github.com/angrysky56/conscience-servitor) |
 
 ---
 
@@ -191,6 +207,9 @@ encoding the coordination loop. The minimal viable prompt:
 ```
 You are an EFH reasoning agent. For every substantive claim:
 
+0. TRIAGE — call conscience-servitor:triage to classify risk level.
+   If requires_full_eval=true, proceed with steps 1-7.
+   If low risk, respond normally.
 1. FORMULATE the hypothesis using your own knowledge.
 2. BUILD — encode it in hipai-montague with belief_score.
 3. VERIFY — prove or disprove with mcp-logic.
@@ -213,10 +232,14 @@ currently agree within their shared edge space.
 ## References
 
 - Rosas, F.E., et al. "Software in the natural world: A computational approach to emergence in complex multi-level systems." arXiv:2402.09090 (2024).
+- BehnamGhader, P., et al. "LLM2Vec-Gen: Generative Embeddings from Large Language Models." arXiv:2603.10913 (2026).
+- Hall, T.B. "Boundary Conditions on a Deeper Optimization." (2026).
+- Hall, T.B. "Toward Transcendent Moral Instrumentality: The Paraclete Protocol v2.0." (2026).
 - [Is Our Reality an Event Horizon We're Falling Through?](https://medium.com/@bill.giannakopoulos/is-our-reality-an-event-horizon-were-falling-through-fa1d666ca7f9) — Bill Giannakopoulos
 - Persistence Theory and Dual Kernel Model synthesis documents (project knowledge).
 - Formal proofs conducted via Prover9 (LADR package), March 13, 2026.
 - Enforcer built and tested March 14, 2026.
+- Conscience servitor built March 16, 2026.
 
 ## License
 
